@@ -1,0 +1,4 @@
+com\zsq\service\StudentServiceImpl.class
+com\zsq\service\TeacherServiceImpl.class
+com\zsq\service\ScoreServiceImpl.class
+com\zsq\service\CourseServiceImpl.class

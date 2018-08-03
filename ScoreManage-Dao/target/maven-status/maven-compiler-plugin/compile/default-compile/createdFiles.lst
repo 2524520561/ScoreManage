@@ -1,0 +1,4 @@
+com\zsq\mapper\ScoreMapper.class
+com\zsq\mapper\TeacherInfoMapper.class
+com\zsq\mapper\CourseMapper.class
+com\zsq\mapper\StudentMapper.class

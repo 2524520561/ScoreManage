@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ScoreManage-ServiceImpl:war">
+    <output-path>$PROJECT_DIR$/../ScoreManage-ServiceImpl/target</output-path>
+    <root id="archive" name="ScoreManage-ServiceImpl.war">
+      <element id="artifact" artifact-name="ScoreManage-ServiceImpl:war exploded" />
+    </root>
+  </artifact>
+</component>

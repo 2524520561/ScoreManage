@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+           http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <context:property-placeholder location="classpath:conf/resource.properties"></context:property-placeholder>
+    <context:component-scan base-package="com.zsq.controller"></context:component-scan>
+ <mvc:interceptors>
+     <mvc:interceptor>
+         <!-- 配置商品被拦截器拦截 -->
+         <mvc:mapping path="/scoreManage/**" />
+         <!-- 配置具体的拦截器 -->
+         <bean class="com.zsq.filter.HandlerInterceptorUser" />
+     </mvc:interceptor>
+ </mvc:interceptors>
+    <mvc:annotation-driven />
+
+
+    <bean
+            class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/X-admin/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8" />
+        <!-- 指定所上传文件的总大小,单位字节。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->
+        <property name="maxUploadSize" value="10485760" />
+    </bean>
+
+    <mvc:resources mapping="/js/**" location="/WEB-INF/X-admin/js/"></mvc:resources>
+    <mvc:resources mapping="/css/**" location="/WEB-INF/X-admin/css/"></mvc:resources>
+    <mvc:resources mapping="/lib/layui/**" location="/WEB-INF/X-admin/lib/layui/"></mvc:resources>
+    <mvc:resources mapping="/fonts/**" location="/WEB-INF/X-admin/fonts/"></mvc:resources>
+    <mvc:resources mapping="/images/**" location="/WEB-INF/X-admin/images/"></mvc:resources>
+
+    <dubbo:application name="scoreManage-web"></dubbo:application>
+    <dubbo:registry protocol="zookeeper" address="192.168.25.129:2181"></dubbo:registry>
+    <dubbo:reference interface="com.zsq.service.CourseService" id="courseServiceImpl"></dubbo:reference>
+    <dubbo:reference interface="com.zsq.service.ScoreService" id="scoreServiceImpl"></dubbo:reference>
+    <dubbo:reference interface="com.zsq.service.StudentService" id="studentServiceImpl"></dubbo:reference>
+    <dubbo:reference interface="com.zsq.service.TeacherService" id="teacherServiceImpl"></dubbo:reference>
+
+
+</beans>

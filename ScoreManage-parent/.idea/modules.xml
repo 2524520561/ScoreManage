@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ScoreManage-Dao/ScoreManage-Dao.iml" filepath="$PROJECT_DIR$/../ScoreManage-Dao/ScoreManage-Dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ScoreManage-POJO/ScoreManage-POJO.iml" filepath="$PROJECT_DIR$/../ScoreManage-POJO/ScoreManage-POJO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ScoreManage-Server/ScoreManage-Server.iml" filepath="$PROJECT_DIR$/../ScoreManage-Server/ScoreManage-Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ScoreManage-Service/ScoreManage-Service.iml" filepath="$PROJECT_DIR$/../ScoreManage-Service/ScoreManage-Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ScoreManage-ServiceImpl/ScoreManage-ServiceImpl.iml" filepath="$PROJECT_DIR$/../ScoreManage-ServiceImpl/ScoreManage-ServiceImpl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ScoreManage-Web/ScoreManage-Web.iml" filepath="$PROJECT_DIR$/../ScoreManage-Web/ScoreManage-Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ScoreManage-parent.iml" filepath="$PROJECT_DIR$/ScoreManage-parent.iml" />
+    </modules>
+  </component>
+</project>
