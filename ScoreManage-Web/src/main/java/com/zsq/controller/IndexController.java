@@ -32,7 +32,6 @@ public class IndexController {
     }
     @RequestMapping("/")
     public String index(){
-        //哈哈哈哈
         String s = "index";
         return s;
     }
